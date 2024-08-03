@@ -19,7 +19,6 @@ public class App {
             */
 
             String nombreUsuario = "" +nombre;
-            return nombreUsuario;
         
             } catch (Exception e) {
             return "Error: " + e.getMessage();
@@ -56,7 +55,6 @@ public class App {
         try {
             
             double valorConvertir = cc / 1000;
-            return (int)valorConvertir;
 
         } catch (Exception e) {
             return -1;
@@ -79,7 +77,6 @@ public class App {
             double tmr = 4.110;
 
             double cantidadPesos = dolares * tmr;
-            return (int)cantidadPesos;
 
 
         } catch (Exception e) {
@@ -100,8 +97,7 @@ public class App {
             */
 
             double fahrenheit = 32 + ((celsius * 9)/5);
-            return (int)fahrenheit;
-
+            
         } catch (Exception e) {
             return -1;
         }
@@ -139,7 +135,7 @@ public class App {
 
     // Un usuario tiene un sistema de báscula para pesar camiones, dado el peso de un camión debe sacar el peso neto de la carga en kilos y toneladas
     // retorne el valor en formato string (pesoEnKg + "|" + pesoEnToneladas)
-    public static String calcularPesoNeto(double peso, double pesoCamion) {
+    public static String calcularPesoNeto(double peso) {
         try {
             /*
             Datos de entrada:
@@ -151,10 +147,11 @@ public class App {
             
             */
 
-            double pesoEnKg = peso - pesoCamion;
+            double pesoEnKg = peso;
             double pesoEnToneladas = pesoEnKg/1000;
 
             return (String)(pesoEnKg + "|" + pesoEnToneladas);
+
         } catch (Exception e) {
             return "0|0";
         }
@@ -223,10 +220,9 @@ public class App {
             
             */
 
-            double gravedadLuna = 9,8*(17/100);
+            double gravedadLuna = 9.8*(17/100);
             double pesoLuna = pesoTierra * gravedadLuna;
 
-            return (int)pesoLuna;
 
         } catch (Exception e) {
             return -1;
@@ -250,7 +246,6 @@ public class App {
 
             double dineroTotal = base+ingresos-retiros;
 
-            return (int)dineroTotal;
 
         } catch (Exception e) {
             return -1;
@@ -299,8 +294,6 @@ public class App {
             */
             double calificacionFinal = (ganados*1) + (perdidos*0) + (empatados*0.5);
 
-            return (int)calificacionFinal;
-
         } catch (Exception e) {
             return -1;
         }
@@ -328,8 +321,6 @@ public class App {
             
             double notaFinal = (nota1Final + nota2Final + nota3Final + nota4Final + nota5Final)/5;
 
-            return (int)notafinal;
-
         } catch (Exception e) {
             return -1;
         }
@@ -348,7 +339,6 @@ public class App {
 
             double nota_necesaria = (nota_minima - puntaje_acumulado) / (porcentaje_restante / 100);
 
-            return (int)nota_necesaria;
         
         } catch (Exception e) {
             return -1;
@@ -388,7 +378,6 @@ public class App {
 
             double areaTriangulo = base*altura;
             
-            return (int)areaTriangulo;
 
         } catch (Exception e) {
             return -1;
@@ -402,7 +391,6 @@ public class App {
             
             double perimetroCuadrado = lado+lado+lado+lado; 
 
-            return (int)perimetroCuadrado;
 
         } catch (Exception e) {
             return -1;
@@ -417,7 +405,6 @@ public class App {
             double pi = Math.PI;
             double volumenCilindro = pi * radio * radio * altura;
 
-            return (int)volumenCilindro;
 
         } catch (Exception e) {
             return -1;
@@ -432,7 +419,6 @@ public class App {
             double pi = Math.PI;
             double areaCirculo = pi * radio * radio;
             
-            return (int)areaCirculo;
             
         } catch (Exception e) {
             return -1;
@@ -442,12 +428,5 @@ public class App {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        String nombreUsuario = "";
-
-            System.out.println("Ingrese su nombre: ");
-            nombreUsuario = sc.nextLine();
-            nombreUsuario = saludarUsuario(nombreUsuario);
-            System.out.println("Hola, " +nombreUsuario);
     }
 }
