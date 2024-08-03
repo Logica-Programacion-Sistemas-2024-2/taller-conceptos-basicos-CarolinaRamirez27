@@ -352,19 +352,18 @@ public class App {
     public static int calcularSalario(int horasNormales, int horasExtrasDiurnas, int horasExtrasNocturnas, double valorHoraNormal) {
         try {
             
-            int incrementoHoraNocturna = (int)valorHoraNormal * 0.35;
-            int incrementoHoraDiurna = (int)valorHoraNormal * 0.15;
-            int pagoHorasDiurnas =  ((int)valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
-            int pagoHorasNocturnas = ((int)valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
-            int pagoHorasNormales = (int)valorHoraNormal * horasNormales;
-            int salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
+            double incrementoHoraNocturna = valorHoraNormal * 0.35;
+            double incrementoHoraDiurna = valorHoraNormal * 0.15;
+            double pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
+            double pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
+            double pagoHorasNormales = valorHoraNormal * horasNormales;
+            double salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
 
-            return salarioFinal;
+            return (int)salarioFinal;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñe un algoritmo que calcule el área de un triángulo rectángulo.
