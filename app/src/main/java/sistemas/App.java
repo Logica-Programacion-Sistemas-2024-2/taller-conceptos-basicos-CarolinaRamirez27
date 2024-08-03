@@ -148,8 +148,8 @@ public class App {
             
             */
 
-            int pesoEnKg = (int)peso/1000;
-            int pesoEnToneladas = pesoEnKg/1000;
+            double pesoEnKg = peso/1000;
+            double pesoEnToneladas = pesoEnKg/1000;
 
             return String.valueOf(pesoEnKg) + "|" + String.valueOf(pesoEnToneladas);
 
@@ -172,8 +172,8 @@ public class App {
             
             */
 
-            int tiempoViaje = ((int)velocidadKilometros * (int)distancia) / (int)velocidadHora;
-            return tiempoViaje;
+            int tiempoViaje = (velocidadHora* distancia) / velocidadKilometros;
+            return (int)tiempoViaje;
 
         } catch (Exception e) {
             return -1;
@@ -221,7 +221,7 @@ public class App {
             
             */
 
-            double gravedadLuna = 9.8*(17/100);
+            double gravedadLuna = 9.8 * 0.17;
             double pesoLuna = pesoTierra * gravedadLuna;
 
             return (int)pesoLuna;
@@ -272,7 +272,7 @@ public class App {
             double impuesto = costoComida*(0.08);
             double total = propina+impuesto+costoComida;
 
-            return propina + "|" + impuesto + "|" + total;
+            return String.valueOf(propina) + "|" + String.valueOf(impuesto) + "|" + String.valueOf(total);
 
         } catch (Exception e) {
             return -1 + "|" + -1 + "|" + -1;
@@ -392,7 +392,7 @@ public class App {
     public static int calcularPerimetroCuadrado(double lado) {
         try {
             
-            double perimetroCuadrado = lado+lado+lado+lado; 
+            double perimetroCuadrado = lado * 4; 
 
             return (int)perimetroCuadrado;
 
