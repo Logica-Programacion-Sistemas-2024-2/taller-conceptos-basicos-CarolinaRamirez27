@@ -10,13 +10,6 @@ public class App {
     // Diseñe un algoritmo para saludar al usuario: Hola usuario. El nombre del usuario es ingresado por teclado
     public static String saludarUsuario(String nombre) {
         try {
-            /* 
-            Datos de entrada
-            Nombre del usuario
-
-            Datos de salida
-            Nombre del usuario
-            */
 
             String nombreUsuario = "Hola, " +nombre;
             return nombreUsuario;
@@ -29,15 +22,7 @@ public class App {
     // Diseñe un algoritmo que lea por teclado una velocidad en Km/seg y la convierta a metros/seg y a metros/hora
     // retorne el valor en formato string (metrosPorSeg + "|" + metrosPorHora)
     public static String convertirVelocidad(double kmPorSeg) {
-        /*
-        Datos de entrada:
-        velocidadKmPorSeg
 
-        Datos de salida:
-        metrosPorSeg
-        metrosPorHora
-       
-         */
         try {
 
             double metrosPorSeg = kmPorSeg * 1000;
@@ -67,15 +52,6 @@ public class App {
     // Solicitar al usuario ingresar una cantidad en dólares y convertirla a pesos según la TRM del día
     public static int convertirDolaresAPesos(double dolares, double trm) {
         try {
-            /*
-            Datos de entrada:
-            dolares
-            tmr
-
-            Datos de salida:
-            cantidadPesos
-
-             */
 
             double cantidadPesos = dolares * trm;
             return (int)cantidadPesos;
@@ -97,7 +73,7 @@ public class App {
             fahrenheit
             */
 
-            double fahrenheit = 32 + ((celsius * 9)/5);
+            double fahrenheit = 32 + (celsius * (9/5));
             return (int)fahrenheit;
 
         } catch (Exception e) {
@@ -108,19 +84,6 @@ public class App {
     // Solicitar al usuario ingresar Nro de Días nro de horas nro de minutos y nro segundos y convertir todo a segundos.
     public static int convertirATotalSegundos(int dias, int horas, int minutos, int segundos) {
         try {
-            /*
-            Datos de entrada:
-            dias
-            horas
-            minutos
-            segundos
-
-            Datos de salida:
-            diasSegundos
-            horasSegundos
-            minutosSegundos
-            
-             */
 
              int diasSegundos = dias * 24 * 3600;
              int horasSegundos = horas * 3600;
@@ -138,15 +101,6 @@ public class App {
     // retorne el valor en formato string (pesoEnKg + "|" + pesoEnToneladas)
     public static String calcularPesoNeto(double peso) {
         try {
-            /*
-            Datos de entrada:
-            pesoCamion
-            peso
-
-            Datos de salida:
-            pesoNetoCamion
-            
-            */
 
             double pesoEnKg = peso/1000;
             double pesoEnToneladas = pesoEnKg/1000;
@@ -161,18 +115,8 @@ public class App {
     // Diseñe un algoritmo que calcule el tiempo necesario para alcanzar un destino dado por el usuario quien además ingresará la velocidad promedio en kilómetros/hora y la distancia en kilómetros
     public static int calcularTiempoViaje(double distancia, double velocidadKilometros, double velocidadHora) {
         try {
-            /*
-            Datos de entrada:
-            distancia
-            velocidadKilometros
-            velocidadHora
 
-            Datos de salida:
-            tiempoViaje
-            
-            */
-
-            int tiempoViaje = (velocidadHora* distancia) / velocidadKilometros;
+            double tiempoViaje = (velocidadHora* distancia) / velocidadKilometros;
             return (int)tiempoViaje;
 
         } catch (Exception e) {
@@ -183,19 +127,6 @@ public class App {
     // Un avión necesita cargar combustible para cubrir sus rutas programadas en el día. Cada 0.2 toneladas de combustible puede recorrer 60.8 Km en velocidad de crucero. En el despegue el avión consume 1.2 toneladas de combustible y en el aterrizaje consume 0.4 toneladas. El piloto desea un algoritmo que ingresando 4 rutas y el kilometraje de cada ruta obtenga la cantidad de combustible que debe tanquear en el avión.
     public static int calcularCombustible(double ruta1, double ruta2, double ruta3, double ruta4) {
         try {
-            /*
-            Datos de entrada:
-            ruta1
-            ruta2
-            ruta3
-            ruta4
-            combustibleDespegue
-            combustibleAterrizaje
-
-            Datos de salida:
-            combustibleNecesario
-
-            */
 
             double combustibleDespegue = 1.2;
             double combustibleAterrizaje = 0.4;
@@ -212,17 +143,8 @@ public class App {
     // Diseñar un algoritmo que calcule el peso neto en la luna de un peso terrestre ingresado por teclado. La gravedad de la Luna es de alrededor del 17% más que la de la tierra
     public static int calcularPesoLunar(double pesoTierra) {
         try {
-            /*
-            Datos de entrada:
-            pesoTierra
 
-            Datos de salida:
-            pesoLuna
-            
-            */
-
-            double gravedadLuna = 9.8 * 0.17;
-            double pesoLuna = pesoTierra * gravedadLuna;
+            double pesoLuna = pesoTierra * 0.17;
 
             return (int)pesoLuna;
 
@@ -234,16 +156,6 @@ public class App {
     // Diseñar un algoritmo que calcule el saldo que debe haber en una taquilla de un banco. El cajero deberá ingresar la base el total de recaudos y el total de retiros
     public static int calcularSaldoTaquilla(double base, double ingresos, double retiros) {
         try {
-            /*
-            Datos de entrada:
-            base
-            ingresos
-            retiros
-
-            Datos de salida:
-            dineroTotal
-            
-            */
 
             double dineroTotal = base+ingresos-retiros;
 
