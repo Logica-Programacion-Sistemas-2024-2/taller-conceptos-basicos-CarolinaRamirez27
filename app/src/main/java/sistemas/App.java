@@ -18,12 +18,12 @@ public class App {
             Nombre del usuario
             */
 
-            String nombreUsuario = "" +nombre;
+            String nombreUsuario = "Hola, " +nombre;
+            return nombreUsuario;
         
             } catch (Exception e) {
             return "Error: " + e.getMessage();
         }
-        return "";
     }
 
     // Diseñe un algoritmo que lea por teclado una velocidad en Km/seg y la convierta a metros/seg y a metros/hora
@@ -42,12 +42,14 @@ public class App {
 
             double metrosPorSeg = kmPorSeg * 1000;
             double metrosPorHora = kmPorSeg * 3600;
-            return (String)metrosPorSeg + "|" + (String)metrosPorHora;
+            String m_s = String.valueOf(metrosPorSeg);
+            String m_h = String.valueOf(metrosPorHora);
+
+            return m_s + "|" + m_h;
 
         } catch (Exception e) {
             return "0|0";
         }
-        return "";
     }
 
     // Solicitar al usuario ingresar una cantidad expresada en cc (centímetros cúbicos) y devolver su cantidad en litros
@@ -55,11 +57,11 @@ public class App {
         try {
             
             double valorConvertir = cc / 1000;
+            return (int)valorConvertir;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Solicitar al usuario ingresar una cantidad en dólares y convertirla a pesos según la TRM del día
@@ -74,15 +76,14 @@ public class App {
             cantidadPesos
 
              */
-            double tmr = 4.110;
 
             double cantidadPesos = dolares * tmr;
+            return (int)cantidadPesos;
 
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Solicitar al usuario ingresar la temperatura en grados centígrados y convertirla en grados Fahrenheit (averiguar la fórmula) F = 32 + ( 9 * C / 5)
@@ -97,11 +98,11 @@ public class App {
             */
 
             double fahrenheit = 32 + ((celsius * 9)/5);
-            
+            return (int)fahrenheit;
+
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Solicitar al usuario ingresar Nro de Días nro de horas nro de minutos y nro segundos y convertir todo a segundos.
@@ -124,13 +125,13 @@ public class App {
              int diasSegundos = dias * 24 * 3600;
              int horasSegundos = horas * 3600;
              int minutosSegundos = minutos * 60;
+             int totalSegundos = diasSegundos + horasSegundos + minutosSegundos + segundos;
 
-            return diasSegundos + "|" + horasSegundos + "|" + minutosSegundos;
+            return totalSegundos;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Un usuario tiene un sistema de báscula para pesar camiones, dado el peso de un camión debe sacar el peso neto de la carga en kilos y toneladas
@@ -147,15 +148,14 @@ public class App {
             
             */
 
-            double pesoEnKg = peso;
-            double pesoEnToneladas = pesoEnKg/1000;
+            int pesoEnKg = (int)peso/1000;
+            int pesoEnToneladas = pesoEnKg/1000;
 
-            return (String)(pesoEnKg + "|" + pesoEnToneladas);
+            return String.valueOf(pesoEnKg) + "|" + String.valueOf(pesoEnToneladas);
 
         } catch (Exception e) {
             return "0|0";
         }
-        return "";
     }
 
     // Diseñe un algoritmo que calcule el tiempo necesario para alcanzar un destino dado por el usuario quien además ingresará la velocidad promedio en kilómetros/hora y la distancia en kilómetros
@@ -172,10 +172,12 @@ public class App {
             
             */
 
+            int tiempoViaje = ((int)velocidadKilometros * (int)distancia) / (int)velocidadHora;
+            return tiempoViaje;
+
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Un avión necesita cargar combustible para cubrir sus rutas programadas en el día. Cada 0.2 toneladas de combustible puede recorrer 60.8 Km en velocidad de crucero. En el despegue el avión consume 1.2 toneladas de combustible y en el aterrizaje consume 0.4 toneladas. El piloto desea un algoritmo que ingresando 4 rutas y el kilometraje de cada ruta obtenga la cantidad de combustible que debe tanquear en el avión.
@@ -197,7 +199,7 @@ public class App {
 
             double combustibleDespegue = 1.2;
             double combustibleAterrizaje = 0.4;
-            double combustibleRutas = (0,2/60.8) * (ruta1; ruta2; ruta3; ruta4); 
+            double combustibleRutas = (0.2/60.8) * (ruta1 + ruta2 + ruta3 + ruta4); 
             double combustibleTotal = combustibleRutas + combustibleAterrizaje + combustibleDespegue;
 
             return (int)combustibleTotal;
@@ -205,7 +207,6 @@ public class App {
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñar un algoritmo que calcule el peso neto en la luna de un peso terrestre ingresado por teclado. La gravedad de la Luna es de alrededor del 17% más que la de la tierra
@@ -223,11 +224,11 @@ public class App {
             double gravedadLuna = 9.8*(17/100);
             double pesoLuna = pesoTierra * gravedadLuna;
 
+            return (int)pesoLuna;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñar un algoritmo que calcule el saldo que debe haber en una taquilla de un banco. El cajero deberá ingresar la base el total de recaudos y el total de retiros
@@ -246,11 +247,11 @@ public class App {
 
             double dineroTotal = base+ingresos-retiros;
 
+            return (int)dineroTotal;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñe un algoritmo para calcular la propina en un restaurante(10%) el impuesto al consumo (8%) y el valor final que deberá pagar ingresando el valor de la comida.
@@ -267,16 +268,15 @@ public class App {
             
             */
             
-            double propina = costoComida*(10/100);
-            double impuesto = costoComida*(8/100);
-            double total = propina+impuesto;
+            double propina = costoComida*(0.10);
+            double impuesto = costoComida*(0.08);
+            double total = propina+impuesto+costoComida;
 
-            return (String)(propina + "|" + impuesto + "|" + total);
+            return propina + "|" + impuesto + "|" + total;
 
         } catch (Exception e) {
             return -1 + "|" + -1 + "|" + -1;
         }
-        return "";
     }
 
     // Diseñar un algoritmo que obtenga los puntos finales de un equipo de fútbol (puntuación según lineamientos de Fifa) a partir de los datos ingresados por teclado: Número de partidos ganados número de partidos perdidos número de partidos empatados.
@@ -292,12 +292,13 @@ public class App {
             calificacionFinal
             
             */
-            double calificacionFinal = (ganados*1) + (perdidos*0) + (empatados*0.5);
+            int calificacionFinal = (ganados*3) + (perdidos*0) + (empatados*1);
+
+            return calificacionFinal;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Elaborar un algoritmo que dadas todas las 5 notas y los 5 porcentajes para una materia calcule la nota final.
@@ -319,12 +320,13 @@ public class App {
             double nota4Final = nota4 * porcentaje4;
             double nota5Final = nota5 * porcentaje5;
             
-            double notaFinal = (nota1Final + nota2Final + nota3Final + nota4Final + nota5Final)/5;
+            double notaFinal = (nota1Final + nota2Final + nota3Final + nota4Final + nota5Final);
+
+            return (int)notaFinal;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Elaborar un algoritmo que dados los 5 porcentajes de una materia y las 4 primeras notas calcule cuánto tiene que sacar para ganar si el puntaje mínimo es 3.
@@ -339,19 +341,21 @@ public class App {
 
             double nota_necesaria = (nota_minima - puntaje_acumulado) / (porcentaje_restante / 100);
 
+            return (int)nota_necesaria;
         
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Se requiere un algoritmo para calcular el salario a pagar a un trabajador con los siguientes datos ingresados por teclado: cantidad de horas normales laboradas cantidad de horas extras diurnas laboradas cantidad de horas extras nocturnas laboradas valor de la hora normal. El valor de las horas extras diurnas tienen un recargo adicional del 15% sobre la hora normal. El valor de las horas extras nocturnas tienen un recargo adicional del 35% sobre la hora normal.
     public static int calcularSalario(int horasNormales, int horasExtrasDiurnas, int horasExtrasNocturnas, double valorHoraNormal) {
         try {
             
-            int pagoHorasDiurnas = valorHoraNormal * horasExtrasDiurnas;
-            int pagoHorasNocturnas = valorHoraNormal * horasExtrasNocturnas;
+            int incrementoHoraNocturna = valorHoraNormal * 0.35;
+            int incrementoHoraDiurna = valorHoraNormal * 0.15;
+            int pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
+            int pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
             int pagoHorasNormales = valorHoraNormal * horasNormales;
             int salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
 
@@ -376,13 +380,13 @@ public class App {
 
             */
 
-            double areaTriangulo = base*altura;
+            double areaTriangulo = (base*altura)/2;
             
+            return (int)areaTriangulo;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñe un algoritmo que calcule el perímetro de un cuadrado.
@@ -391,11 +395,11 @@ public class App {
             
             double perimetroCuadrado = lado+lado+lado+lado; 
 
+            return (int)perimetroCuadrado;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñe un algoritmo que calcule el volumen de un cilindro.
@@ -405,11 +409,11 @@ public class App {
             double pi = Math.PI;
             double volumenCilindro = pi * radio * radio * altura;
 
+            return (int)volumenCilindro;
 
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     // Diseñe un algoritmo que calcule el área del círculo. El radio se pide por teclado.
@@ -419,11 +423,11 @@ public class App {
             double pi = Math.PI;
             double areaCirculo = pi * radio * radio;
             
+            return (int)areaCirculo;
             
         } catch (Exception e) {
             return -1;
         }
-        return 0;
     }
 
     public static void main(String[] args) {
