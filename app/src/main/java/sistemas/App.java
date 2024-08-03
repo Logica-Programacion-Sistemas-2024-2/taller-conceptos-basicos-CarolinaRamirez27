@@ -77,7 +77,7 @@ public class App {
 
              */
 
-            double cantidadPesos = dolares * tmr;
+            double cantidadPesos = dolares * trm;
             return (int)cantidadPesos;
 
 
@@ -352,11 +352,11 @@ public class App {
     public static int calcularSalario(int horasNormales, int horasExtrasDiurnas, int horasExtrasNocturnas, double valorHoraNormal) {
         try {
             
-            int incrementoHoraNocturna = valorHoraNormal * 0.35;
-            int incrementoHoraDiurna = valorHoraNormal * 0.15;
-            int pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
-            int pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
-            int pagoHorasNormales = valorHoraNormal * horasNormales;
+            int incrementoHoraNocturna = (int)valorHoraNormal * 0.35;
+            int incrementoHoraDiurna = (int)valorHoraNormal * 0.15;
+            int pagoHorasDiurnas =  ((int)valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
+            int pagoHorasNocturnas = ((int)valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
+            int pagoHorasNormales = (int)valorHoraNormal * horasNormales;
             int salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
 
             return salarioFinal;
