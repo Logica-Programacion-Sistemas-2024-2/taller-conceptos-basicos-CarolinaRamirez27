@@ -171,11 +171,8 @@ public class App {
             double propina = costoComida*(0.1);
             double impuesto = costoComida*(0.08);
             double total = propina+impuesto+costoComida;
-            String propinaStr = String.valueOf(propina);
-            String impuestoStr = String.valueOf(impuesto);
-            String totalStr = String.valueOf(total);
 
-            return ((propinaStr) + "|" + (impuestoStr) + "|" + (totalStr));
+            return String.format(propina + "|" + impuesto + "|" + total);
 
         } catch (Exception e) {
             return -1 + "|" + -1 + "|" + -1;
