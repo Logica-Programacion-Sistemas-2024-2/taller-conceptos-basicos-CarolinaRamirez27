@@ -26,10 +26,8 @@ public class App {
 
             double metrosPorSeg = kmPorSeg * 1000;
             double metrosPorHora = kmPorSeg * 3600;
-            String m_s = String.valueOf(metrosPorSeg);
-            String m_h = String.valueOf(metrosPorHora);
 
-            return m_s + "|" + m_h;
+            return metrosPorHora + "|" + metrosPorSeg;
 
         } catch (Exception e) {
             return "0|0";
