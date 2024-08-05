@@ -172,7 +172,7 @@ public class App {
             double impuesto = costoComida*(0.08);
             double total = propina+impuesto+costoComida;
 
-            return (int)propina + "|" + (int)impuesto + "|" + (int)totala;
+            return (int)propina + "|" + (int)impuesto + "|" + (int)total;
 
         } catch (Exception e) {
             return -1 + "|" + -1 + "|" + -1;
