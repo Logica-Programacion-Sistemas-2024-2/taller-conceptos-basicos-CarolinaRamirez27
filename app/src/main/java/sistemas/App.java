@@ -41,8 +41,8 @@ public class App {
     public static int convertirCcALitros(double cc) {
         try {
             
-            double valorConvertir = cc / 1000;
-            return (int)valorConvertir;
+            int valorConvertir = (int)(cc / 1000);
+            return valorConvertir;
 
         } catch (Exception e) {
             return -1;
@@ -53,8 +53,8 @@ public class App {
     public static int convertirDolaresAPesos(double dolares, double trm) {
         try {
 
-            double cantidadPesos = dolares * trm;
-            return (int)cantidadPesos;
+            int cantidadPesos = (int)(dolares * trm);
+            return cantidadPesos;
 
 
         } catch (Exception e) {
@@ -73,7 +73,7 @@ public class App {
             fahrenheit
             */
 
-            double fahrenheit = 32 + (celsius * (9/5));
+            double fahrenheit = 32 + (celsius * 1.8);
             return (int)fahrenheit;
 
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class App {
     public static String calcularPesoNeto(double peso) {
         try {
 
-            double pesoEnKg = peso/1000;
+            double pesoEnKg = peso;
             double pesoEnToneladas = pesoEnKg/1000;
 
             return String.valueOf(pesoEnKg) + "|" + String.valueOf(pesoEnToneladas);
@@ -116,7 +116,7 @@ public class App {
     public static int calcularTiempoViaje(double distancia, double velocidadKilometros, double velocidadHora) {
         try {
 
-            double tiempoViaje = (velocidadHora* distancia) / velocidadKilometros;
+            int tiempoViaje = (velocidadHora* distancia) / velocidadKilometros;
             return (int)tiempoViaje;
 
         } catch (Exception e) {
@@ -170,16 +170,7 @@ public class App {
     // retorne el valor en formato string (propina + "|" + impuesto + "|" + total)
     public static String calcularCuentaRestaurante(double costoComida) {
         try {
-            /*
-            Datos de entrada:
-            costo comida
-
-
-            Datos de salida:
-            valorPropina
-            
-            */
-            
+      
             double propina = costoComida*(0.10);
             double impuesto = costoComida*(0.08);
             double total = propina+impuesto+costoComida;
@@ -194,16 +185,7 @@ public class App {
     // Diseñar un algoritmo que obtenga los puntos finales de un equipo de fútbol (puntuación según lineamientos de Fifa) a partir de los datos ingresados por teclado: Número de partidos ganados número de partidos perdidos número de partidos empatados.
     public static int calcularPuntosFutbol(int ganados, int perdidos, int empatados) {
         try {
-            /*
-            Datos de entrada:
-            ganados
-            perdidos
-            empatados
 
-            Datos de salida:
-            calificacionFinal
-            
-            */
             int calificacionFinal = (ganados*3) + (perdidos*0) + (empatados*1);
 
             return calificacionFinal;
@@ -217,22 +199,14 @@ public class App {
     public static int calcularNotaFinal(double nota1, double nota2, double nota3, double nota4, double nota5,
                                         double porcentaje1, double porcentaje2, double porcentaje3, double porcentaje4, double porcentaje5) {
         try {
-            /*
-            Datos de entrada:
-            nota1, nota2, nota3, nota4, nota5
-            porcentaje1, porcentaje2, porcentaje3, porcentaje4, porcentaje5
 
-            Datos de salida:
-            notafinal
-            
-            */
             double nota1Final = nota1 * porcentaje1;
             double nota2Final = nota2 * porcentaje2;
             double nota3Final = nota3 * porcentaje3;
             double nota4Final = nota4 * porcentaje4;
             double nota5Final = nota5 * porcentaje5;
             
-            double notaFinal = (nota1Final + nota2Final + nota3Final + nota4Final + nota5Final);
+            int notaFinal =(int) (nota1Final + nota2Final + nota3Final + nota4Final + nota5Final);
 
             return (int)notaFinal;
 
@@ -247,11 +221,11 @@ public class App {
                                             double nota1, double nota2, double nota3, double nota4) {
         try {
             
-            double puntaje_acumulado = (nota1 * porcentaje1 / 100) + (nota2 * porcentaje2 / 100) + (nota3 * porcentaje3 / 100) + (nota4 * porcentaje4 / 100);
-            double porcentaje_restante = porcentaje5;
-            double nota_minima = 3.0;
+            int puntaje_acumulado = (int)((nota1 * porcentaje1) + (nota2 * porcentaje2) + (nota3 * porcentaje3) + (nota4 * porcentaje4));
+            int porcentaje_restante = (int)porcentaje5;
+            int nota_minima = 3;
 
-            double nota_necesaria = (nota_minima - puntaje_acumulado) / (porcentaje_restante / 100);
+            double nota_necesaria = (nota_minima - puntaje_acumulado) / (porcentaje_restante);
 
             return (int)nota_necesaria;
         
@@ -264,14 +238,14 @@ public class App {
     public static int calcularSalario(int horasNormales, int horasExtrasDiurnas, int horasExtrasNocturnas, double valorHoraNormal) {
         try {
             
-            double incrementoHoraNocturna = valorHoraNormal * 0.35;
-            double incrementoHoraDiurna = valorHoraNormal * 0.15;
-            double pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
-            double pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
-            double pagoHorasNormales = valorHoraNormal * horasNormales;
-            double salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
+            int incrementoHoraNocturna = (int)(valorHoraNormal * 0.35);
+            int incrementoHoraDiurna = (int)(valorHoraNormal * 0.15);
+            int pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
+            int pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
+            int pagoHorasNormales = valorHoraNormal * horasNormales;
+            int salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
 
-            return (int)salarioFinal;
+            return salarioFinal;
 
         } catch (Exception e) {
             return -1;
@@ -281,15 +255,6 @@ public class App {
     // Diseñe un algoritmo que calcule el área de un triángulo rectángulo.
     public static int calcularAreaTriangulo(double base, double altura) {
         try {
-            /*
-            Datos de entrada:
-            altura
-            base
-
-            Datos de salida:
-            areaTriangulo
-
-            */
 
             double areaTriangulo = (base*altura)/2;
             
@@ -320,7 +285,7 @@ public class App {
             double pi = Math.PI;
             double volumenCilindro = pi * radio * radio * altura;
 
-            return (int)volumenCilindro;
+            return (int) volumenCilindro;
 
         } catch (Exception e) {
             return -1;
