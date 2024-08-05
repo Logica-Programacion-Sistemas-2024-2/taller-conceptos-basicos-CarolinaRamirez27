@@ -3,13 +3,16 @@
  */
 package sistemas;
 
+import java.util.Scanner;
+
 public class App {
     
     // Diseñe un algoritmo para saludar al usuario: Hola usuario. El nombre del usuario es ingresado por teclado
     public static String saludarUsuario(String nombre) {
         try {
 
-            return "Hola " + nombre;
+            String nombreUsuario = "Hola, " +nombre;
+            return nombreUsuario;
         
             } catch (Exception e) {
             return "Error: " + e.getMessage();
@@ -241,9 +244,9 @@ public class App {
             
             int incrementoHoraNocturna = (int)(valorHoraNormal * 0.35);
             int incrementoHoraDiurna = (int)(valorHoraNormal * 0.15);
-            int pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
-            int pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
-            int pagoHorasNormales = valorHoraNormal * horasNormales;
+            int pagoHorasDiurnas =  ((int)valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
+            int pagoHorasNocturnas = ((int)valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
+            int pagoHorasNormales = (int)valorHoraNormal * horasNormales;
             int salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
 
             return salarioFinal;
