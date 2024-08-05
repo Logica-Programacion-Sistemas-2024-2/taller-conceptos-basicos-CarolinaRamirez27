@@ -116,8 +116,12 @@ public class App {
     public static int calcularTiempoViaje(double distancia, double velocidadKilometros, double velocidadHora) {
         try {
 
-            int tiempoViaje = (velocidadHora* distancia) / velocidadKilometros;
-            return (int)tiempoViaje;
+            int distanciaInt = (int) distancia;
+            int velocidadKilometrosInt = (int) velocidadKilometros;
+            int velocidadInt = (int) (velocidadHora);
+            int tiempoViaje = (distanciaInt * velocidadInt)/velocidadKilometros;
+            
+            return tiempoViaje;
 
         } catch (Exception e) {
             return -1;
