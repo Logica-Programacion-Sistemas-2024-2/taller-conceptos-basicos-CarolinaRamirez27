@@ -23,7 +23,7 @@ public class App {
         try {
 
             double metrosPorSeg = kmPorSeg * 1000;
-            double metrosPorHora = kmPorSeg * 3600;
+            double metrosPorHora = kmPorSeg * 3600 * 1000;
 
             return metrosPorHora + "|" + metrosPorSeg;
 
