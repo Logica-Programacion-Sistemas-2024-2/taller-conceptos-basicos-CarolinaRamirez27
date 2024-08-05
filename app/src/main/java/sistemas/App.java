@@ -11,8 +11,7 @@ public class App {
     public static String saludarUsuario(String nombre) {
         try {
 
-            String nombreUsuario = "Hola, " +nombre;
-            return nombreUsuario;
+            return "Hola " + nombre;
         
             } catch (Exception e) {
             return "Error: " + e.getMessage();
