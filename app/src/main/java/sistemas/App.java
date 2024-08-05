@@ -127,8 +127,9 @@ public class App {
     public static int calcularCombustible(double ruta1, double ruta2, double ruta3, double ruta4) {
         try {
 
-            double combustibleDespegueAterrizaje = 1.2 + 0.4;
-            double combustibleTotal = ((0.2/60.8)*ruta1+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta2+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta3+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta4+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta5+combustibleDespegueAterrizaje); 
+            double combustibleDespegueAterrizaje = (1.2 + 0.4) * 4;
+            double combustibleRutas = (0.2/60.8) * (ruta1 + ruta2 + ruta3 + ruta4);
+            double combustibleTotal = combustibleRutas *  combustibleDespegueAterrizaje;
 
             return (int)combustibleTotal;
 
