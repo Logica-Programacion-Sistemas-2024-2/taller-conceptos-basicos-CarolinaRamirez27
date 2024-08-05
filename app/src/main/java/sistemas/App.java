@@ -25,7 +25,7 @@ public class App {
             double metrosPorSeg = kmPorSeg * 1000;
             double metrosPorHora = kmPorSeg * 3600 * 1000;
 
-            return metrosPorHora + "|" + metrosPorSeg;
+            return (int)metrosPorHora + "|" + (int)metrosPorSeg;
 
         } catch (Exception e) {
             return "0|0";
