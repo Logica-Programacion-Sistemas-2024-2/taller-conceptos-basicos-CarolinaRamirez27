@@ -3,8 +3,6 @@
  */
 package sistemas;
 
-import java.util.Scanner;
-
 public class App {
     
     // Diseñe un algoritmo para saludar al usuario: Hola usuario. El nombre del usuario es ingresado por teclado
