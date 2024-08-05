@@ -127,10 +127,8 @@ public class App {
     public static int calcularCombustible(double ruta1, double ruta2, double ruta3, double ruta4) {
         try {
 
-            double combustibleDespegue = 1.2;
-            double combustibleAterrizaje = 0.4;
-            double combustibleRutas = (0.2/60.8) * (ruta1 + ruta2 + ruta3 + ruta4); 
-            double combustibleTotal =(combustibleRutas + combustibleAterrizaje + combustibleDespegue);
+            double combustibleDespegueAterrizaje = 1.2 + 0.4;
+            double combustibleTotal = ((0.2/60.8)*ruta1+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta2+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta3+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta4+combustibleDespegueAterrizaje) + ((0.2/60.8)*ruta5+combustibleDespegueAterrizaje); 
 
             return (int)combustibleTotal;
 
@@ -202,6 +200,8 @@ public class App {
                                         double porcentaje1, double porcentaje2, double porcentaje3, double porcentaje4, double porcentaje5) {
         try {
 
+            if (porcentaje1 + porcentaje2 + porcentaje3 + porcentaje4 + porcentaje5 == 1) {
+
             double nota1Final = nota1 * porcentaje1;
             double nota2Final = nota2 * porcentaje2;
             double nota3Final = nota3 * porcentaje3;
@@ -210,7 +210,14 @@ public class App {
             
             int notaFinal =(int) (nota1Final + nota2Final + nota3Final + nota4Final + nota5Final);
 
+            
             return (int)notaFinal;
+            
+            }
+            
+            else {
+                return -1;
+            }
 
         } catch (Exception e) {
             return -1;
