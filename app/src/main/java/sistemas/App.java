@@ -145,7 +145,7 @@ public class App {
     public static int calcularPesoLunar(double pesoTierra) {
         try {
 
-            double pesoLuna = pesoTierra * 0.17;
+            double pesoLuna = pesoTierra + (pesoTierra * 0.17);
 
             return (int)pesoLuna;
 
