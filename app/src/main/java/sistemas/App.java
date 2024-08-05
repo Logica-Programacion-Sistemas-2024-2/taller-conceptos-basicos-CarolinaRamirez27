@@ -119,7 +119,7 @@ public class App {
             int distanciaInt = (int) distancia;
             int velocidadKilometrosInt = (int) velocidadKilometros;
             int velocidadInt = (int) (velocidadHora);
-            int tiempoViaje = (distanciaInt * velocidadInt)/velocidadKilometros;
+            int tiempoViaje = (int)((distanciaInt * velocidadInt)/velocidadKilometrosInt);
             
             return tiempoViaje;
 
