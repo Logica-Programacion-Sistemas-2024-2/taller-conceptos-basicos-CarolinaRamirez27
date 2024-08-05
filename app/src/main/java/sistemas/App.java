@@ -172,7 +172,7 @@ public class App {
     public static String calcularCuentaRestaurante(double costoComida) {
         try {
       
-            double propina = costoComida*(0.10);
+            double propina = costoComida*(0.1);
             double impuesto = costoComida*(0.08);
             double total = propina+impuesto+costoComida;
             String propinaStr = String.valueOf(propina);
@@ -242,14 +242,14 @@ public class App {
     public static int calcularSalario(int horasNormales, int horasExtrasDiurnas, int horasExtrasNocturnas, double valorHoraNormal) {
         try {
             
-            int incrementoHoraNocturna = (int)(valorHoraNormal * 0.35);
-            int incrementoHoraDiurna = (int)(valorHoraNormal * 0.15);
-            int pagoHorasDiurnas =  ((int)valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
-            int pagoHorasNocturnas = ((int)valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
-            int pagoHorasNormales = (int)valorHoraNormal * horasNormales;
-            int salarioFinal = pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales;
+            double incrementoHoraNocturna = (valorHoraNormal * 0.35);
+            double  incrementoHoraDiurna = (valorHoraNormal * 0.15);
+            double pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
+            double pagoHorasNocturnas = (valorHoraNormal + incrementoHoraNocturna) * horasExtrasNocturnas;
+            double pagoHorasNormales = (valorHoraNormal * horasNormales);
+            double salarioFinal = (pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales);
 
-            return salarioFinal;
+            return (int)salarioFinal;
 
         } catch (Exception e) {
             return -1;
@@ -314,4 +314,3 @@ public class App {
 
     }
 }
-
