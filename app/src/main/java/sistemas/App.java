@@ -3,8 +3,6 @@
  */
 package sistemas;
 
-import java.util.Scanner;
-
 public class App {
     
     // Diseñe un algoritmo para saludar al usuario: Hola usuario. El nombre del usuario es ingresado por teclado
@@ -242,6 +240,8 @@ public class App {
     public static int calcularSalario(int horasNormales, int horasExtrasDiurnas, int horasExtrasNocturnas, double valorHoraNormal) {
         try {
             
+            if (valorHoraNormal > 0) {
+            
             double incrementoHoraNocturna = (valorHoraNormal * 0.35);
             double  incrementoHoraDiurna = (valorHoraNormal * 0.15);
             double pagoHorasDiurnas =  (valorHoraNormal + incrementoHoraDiurna) * horasExtrasDiurnas;
@@ -250,6 +250,13 @@ public class App {
             double salarioFinal = (pagoHorasDiurnas + pagoHorasNocturnas + pagoHorasNormales);
 
             return (int)salarioFinal;
+            }
+
+            else {
+
+                return -1;
+            }
+            
 
         } catch (Exception e) {
             return -1;
