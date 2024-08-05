@@ -129,10 +129,10 @@ public class App {
     public static int calcularCombustible(double ruta1, double ruta2, double ruta3, double ruta4) {
         try {
 
-            int combustibleDespegue = 1.2;
-            int combustibleAterrizaje = 0.4;
-            int combustibleRutas = (0.2/60.8) * (int)(ruta1 + ruta2 + ruta3 + ruta4); 
-            int combustibleTotal = (int)(combustibleRutas + combustibleAterrizaje + combustibleDespegue);
+            double combustibleDespegue = 1.2;
+            double combustibleAterrizaje = 0.4;
+            double combustibleRutas = (0.2/60.8) * (ruta1 + ruta2 + ruta3 + ruta4); 
+            double combustibleTotal =(combustibleRutas + combustibleAterrizaje + combustibleDespegue);
 
             return (int)combustibleTotal;
 
