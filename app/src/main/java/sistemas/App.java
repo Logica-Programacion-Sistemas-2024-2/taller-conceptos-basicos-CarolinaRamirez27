@@ -172,7 +172,7 @@ public class App {
             double impuesto = costoComida*(0.08);
             double total = propina+impuesto+costoComida;
 
-            return String.format(propina + "|" + impuesto + "|" + total);
+            return (int)propina + "|" + (int)impuesto + "|" + (int)totala;
 
         } catch (Exception e) {
             return -1 + "|" + -1 + "|" + -1;
