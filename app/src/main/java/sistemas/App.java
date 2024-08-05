@@ -99,10 +99,10 @@ public class App {
     public static String calcularPesoNeto(double peso) {
         try {
 
-            double pesoEnKg = peso;
-            double pesoEnToneladas = pesoEnKg/1000;
+            int pesoEnKg = (int) (peso/1000);
+            int pesoEnToneladas = (int) (pesoEnKg/1000000);
 
-            return String.valueOf(pesoEnKg) + "|" + String.valueOf(pesoEnToneladas);
+            return (pesoEnKg) + "|" + (pesoEnToneladas);
 
         } catch (Exception e) {
             return "0|0";
